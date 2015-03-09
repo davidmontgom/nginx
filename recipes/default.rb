@@ -6,7 +6,7 @@ execute "install_nginx" do
   not_if {File.exists?("#{Chef::Config[:file_cache_path]}/nginx_lock")}
 end
 
-package "nginx-extras" do
+package "nginx-full" do
   action :install
 end
 

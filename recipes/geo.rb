@@ -20,7 +20,14 @@ bash "install_geo" do
   not_if {File.exists?("/var/geo/GeoLiteCity.dat")}
 end
 
-python_package "geoip2" 
+
+
+bash "install_geoip2" do
+  user "root"
+  code <<-EOH
+  EOH
+  action :run
+end
 
 package "python-geoip" do
   action :install

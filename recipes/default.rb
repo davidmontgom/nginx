@@ -21,13 +21,14 @@ bash "kill_nginx" do
   not_if {File.exists?("#{Chef::Config[:file_cache_path]}/nginx_kill.lock")}
 end
 
-
+=begin
 execute "remove-sites-available" do
   command "rm /etc/nginx/sites-available/default"
   user "root"
   action :run
   only_if {File.exists?("/etc/nginx/sites-available/default")}
 end
+=end
 
 
 service "nginx" do
